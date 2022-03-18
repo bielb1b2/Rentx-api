@@ -26,7 +26,7 @@ class CategoriesRepository implements ICategoriesRepository {
             name: name,
             description: description
         });
-    
+        
         await this.repository.save(category)
     }
 
@@ -36,7 +36,7 @@ class CategoriesRepository implements ICategoriesRepository {
     }
 
     async findByName(name: string): Promise<Category> {
-        const category = await this.repository.findOne({ where: name });
+        const category = await this.repository.findOne({ name });
         return category;
     }
 
